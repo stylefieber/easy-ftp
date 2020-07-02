@@ -1,14 +1,15 @@
 declare module "easy-ftp" {
 
     interface FtpConfig {
-        host?: string, // default lovalhost
+        host?: string, // default localhost
         port?: number | 21,
         username: string,
         password: string,
         privateKey?: string, // (only sftp)
         secure?: boolean, // (only ftp) same as for tls.connect()
         secureOptions?: boolean, // (only ftp)
-        type?: 'ftp' | 'sftp'
+        type?: 'ftp' | 'sftp',
+        ignoreFilesEndWith?: array
     }
 
     type PathCallback = (err: Error, path: string) => void
